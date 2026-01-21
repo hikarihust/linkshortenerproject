@@ -1,5 +1,6 @@
 import { auth } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
+import Link from "next/link";
 import { SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Link2, BarChart3, Lock, Zap, Globe, Shield } from "lucide-react";
