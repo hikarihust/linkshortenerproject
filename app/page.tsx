@@ -1,16 +1,9 @@
-import { auth } from '@clerk/nextjs/server';
-import { redirect } from 'next/navigation';
 import Link from "next/link";
 import { SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Link2, BarChart3, Lock, Zap, Globe, Shield } from "lucide-react";
 
-export default async function Home() {
-  const { userId } = await auth();
-  
-  if (userId) {
-    redirect('/dashboard');
-  }
+export default function Home() {
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 to-black">

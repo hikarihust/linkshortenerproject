@@ -144,6 +144,7 @@ Required variables (see `.env.example`):
 - **Authentication** is handled by Clerk - don't implement custom auth
 - **Styling** uses Tailwind utility classes - avoid custom CSS unless necessary
 - **Icons** use Lucide React library
+- **⚠️ NEVER use middleware.ts** - Middleware is deprecated in Next.js 16. Use `proxy.ts` instead for routing and request handling logic
 
 ## Getting Help
 
