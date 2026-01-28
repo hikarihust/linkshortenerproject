@@ -1,3 +1,7 @@
+---
+description: Read this before creating or modifying UI components in the project.
+---
+
 # Component Guidelines - Link Shortener Project
 
 This document outlines the UI component standards and guidelines for this application.

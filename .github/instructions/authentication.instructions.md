@@ -1,3 +1,7 @@
+---
+description: Read this before implementing or modifying authentication in this application.
+---
+
 # Authentication - Clerk Integration
 
 This document outlines authentication implementation standards for this application.

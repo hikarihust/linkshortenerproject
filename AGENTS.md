@@ -1,7 +1,5 @@
 # Agent Instructions - Link Shortener Project
 
-⚠️ **CRITICAL: Before generating ANY code, you MUST read the relevant documentation files in the `/docs` directory first.** ⚠️
-
 This document provides comprehensive guidance for AI coding assistants working on this Next.js-based link shortener application.
 
 ## Project Overview
@@ -14,19 +12,6 @@ This is a modern link shortener application built with:
 - **Authentication**: Clerk
 - **Styling**: Tailwind CSS v4
 - **UI Components**: Custom components with shadcn/ui patterns
-
-## Quick Reference
-
-🔴 **MANDATORY REQUIREMENT**: Before writing ANY code related to the topics below, you MUST first read and understand the corresponding documentation file. This is NOT optional. 🔴
-
-For detailed instructions on specific topics, refer to these documents in the `/docs` directory:
-
-- **Authentication**: [authentication.md](./docs/authentication.md) - Clerk integration, protected routes, and auth patterns
-  - ⚠️ **READ THIS FIRST** before implementing any authentication-related code
-- **Components**: [components.md](./docs/components.md) - shadcn/ui component usage and UI guidelines
-  - ⚠️ **READ THIS FIRST** before creating or modifying any UI components
-
-**CRITICAL**: Never skip reading the relevant documentation. The documentation contains essential patterns, conventions, and requirements that must be followed. Generating code without reading the docs will result in incorrect implementations.
 
 ## Core Principles
 
@@ -55,26 +40,6 @@ For detailed instructions on specific topics, refer to these documents in the `/
 - Maintain consistent formatting
 - Write self-documenting code with clear naming
 - Add comments only when necessary to explain "why", not "what"
-
-## Development Workflow
-
-1. **Before Making Changes** ⚠️ **CRITICAL STEP**
-   - **FIRST**: Read the relevant documentation files in `/docs` directory
-   - **SECOND**: Understand the existing code structure
-   - **THIRD**: Review related components and utilities
-   - **NEVER** skip the documentation step - it contains essential requirements
-
-2. **While Coding**
-   - Follow established patterns in the codebase
-   - Use existing utilities and components when possible
-   - Write type-safe code
-   - Consider performance implications
-
-3. **After Implementation**
-   - Test functionality thoroughly
-   - Update related documentation if needed
-   - Ensure ESLint passes
-   - Verify TypeScript compilation
 
 ## Key Conventions
 
@@ -145,15 +110,6 @@ Required variables (see `.env.example`):
 - **Styling** uses Tailwind utility classes - avoid custom CSS unless necessary
 - **Icons** use Lucide React library
 - **⚠️ NEVER use middleware.ts** - Middleware is deprecated in Next.js 16. Use `proxy.ts` instead for routing and request handling logic
-
-## Getting Help
-
-When unsure about:
-- **Authentication**: Check [authentication.md](./docs/authentication.md)
-- **Architecture decisions**: Consult [architecture.md](./docs/architecture.md) (if exists)
-- **Code patterns**: Look for similar implementations in the codebase
-- **Database operations**: Check [database.md](./docs/database.md) (if exists)
-- **React patterns**: Reference [components.md](./docs/components.md) (if exists)
 
 ## Agent Behavior Guidelines
 
