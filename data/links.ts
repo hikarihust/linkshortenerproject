@@ -7,7 +7,7 @@ export async function getUserLinks(userId: string) {
     .select()
     .from(links)
     .where(eq(links.userId, userId))
-    .orderBy(desc(links.createdAt));
+    .orderBy(desc(links.updatedAt));
 }
 
 export async function createLink(data: Omit<NewLink, 'id' | 'createdAt' | 'updatedAt'>) {
@@ -30,4 +30,27 @@ export async function checkShortCodeExists(shortCode: string): Promise<boolean> 
     .limit(1);
   
   return existing.length > 0;
+}
+
+export async function updateLink(
+  linkId: number,
+  userId: string,
+  data: { originalUrl: string; shortCode: string }
+) {
+  const [updatedLink] = await db
+    .update(links)
+    .set({
+      ...data,
+      updatedAt: new Date(),
+    })
+    .where(eq(links.id, linkId))
+    .returning();
+  
+  return updatedLink;
+}
+
+export async function deleteLink(linkId: number, userId: string) {
+  await db
+    .delete(links)
+    .where(eq(links.id, linkId));
 }

@@ -2,6 +2,8 @@ import { auth } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import { getUserLinks } from '@/data/links';
 import { CreateLinkDialog } from '@/components/CreateLinkDialog';
+import { EditLinkDialog } from '@/components/EditLinkDialog';
+import { DeleteLinkDialog } from '@/components/DeleteLinkDialog';
 
 export default async function DashboardPage() {
   const { userId } = await auth();
@@ -32,18 +34,24 @@ export default async function DashboardPage() {
                   key={link.id} 
                   className="border rounded-lg p-4 hover:bg-accent/50 transition-colors"
                 >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-sm font-semibold">
-                        /{link.shortCode}
-                      </span>
-                      <span className="text-xs text-muted-foreground">
-                        {new Date(link.createdAt).toLocaleDateString()}
-                      </span>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1 space-y-2 min-w-0">
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-sm font-semibold">
+                          /{link.shortCode}
+                        </span>
+                        <span className="text-xs text-muted-foreground">
+                          {new Date(link.createdAt).toLocaleDateString()}
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground truncate">
+                        {link.originalUrl}
+                      </p>
                     </div>
-                    <p className="text-sm text-muted-foreground truncate">
-                      {link.originalUrl}
-                    </p>
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      <EditLinkDialog link={link} />
+                      <DeleteLinkDialog link={link} />
+                    </div>
                   </div>
                 </li>
               ))}
