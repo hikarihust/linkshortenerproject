@@ -49,6 +49,16 @@ export async function updateLink(
   return updatedLink;
 }
 
+export async function getLinkByShortCode(shortCode: string) {
+  const [link] = await db
+    .select()
+    .from(links)
+    .where(eq(links.shortCode, shortCode))
+    .limit(1);
+  
+  return link;
+}
+
 export async function deleteLink(linkId: number, userId: string) {
   await db
     .delete(links)
